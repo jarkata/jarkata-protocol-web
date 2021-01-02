@@ -1,11 +1,9 @@
 package cn.jarkata.protocol.web;
 
-import java.io.Serializable;
-
 /**
  * 分页请求
  */
-public class BasePageRequest implements Serializable {
+public class BasePageRequest<T> extends BaseRequest<T> {
 
     private int pageNo;
     private int pageSize;
