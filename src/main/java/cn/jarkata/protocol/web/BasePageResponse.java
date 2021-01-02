@@ -6,7 +6,7 @@ public class BasePageResponse<T> extends BaseResponse {
     //分页参数
     private int pageNo;
     private int pageSize;
-    private int totalCount;
+    private long totalCount;
     private List<T> data;
 
     public BasePageResponse() {
@@ -39,15 +39,15 @@ public class BasePageResponse<T> extends BaseResponse {
         this.pageSize = pageSize;
     }
 
-    public int getTotalCount() {
+    public long getTotalCount() {
         return totalCount;
     }
 
-    public void setTotalCount(int totalCount) {
+    public void setTotalCount(long totalCount) {
         this.totalCount = totalCount;
     }
 
-    public int getTotalPage() {
+    public long getTotalPage() {
         if (pageSize <= 0) {
             return 0;
         }

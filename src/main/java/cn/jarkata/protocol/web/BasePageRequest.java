@@ -3,10 +3,22 @@ package cn.jarkata.protocol.web;
 /**
  * 分页请求
  */
-public class BasePageRequest<T> extends BaseRequest<T> {
+public final class BasePageRequest<T> extends BaseRequest<T> {
 
     private int pageNo;
     private int pageSize;
+
+    public BasePageRequest() {
+    }
+
+    public BasePageRequest(int pageNo, int pageSize) {
+        this.pageNo = pageNo;
+        this.pageSize = pageSize;
+    }
+
+    public static <R> BasePageRequest<R> newRequest(BasePageRequest<?> pageRequest) {
+        return new BasePageRequest<>(pageRequest.getPageNo(), pageRequest.getPageSize());
+    }
 
     public int getPageNo() {
         return pageNo;

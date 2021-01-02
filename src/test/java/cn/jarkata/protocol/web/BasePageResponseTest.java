@@ -10,7 +10,7 @@ public class BasePageResponseTest {
         BasePageResponse<Object> data = new BasePageResponse<Object>();
         data.setPageSize(100);
         data.setTotalCount(10);
-        int totalPage = data.getTotalPage();
+        long totalPage = data.getTotalPage();
         Assert.assertEquals(totalPage, 1);
     }
 
@@ -19,7 +19,7 @@ public class BasePageResponseTest {
         BasePageResponse<Object> data = new BasePageResponse<Object>();
         data.setPageSize(100);
         data.setTotalCount(0);
-        int totalPage = data.getTotalPage();
+        long totalPage = data.getTotalPage();
         Assert.assertEquals(totalPage, 0);
     }
 
@@ -28,7 +28,7 @@ public class BasePageResponseTest {
         BasePageResponse<Object> data = new BasePageResponse<Object>();
         data.setPageSize(100);
         data.setTotalCount(210);
-        int totalPage = data.getTotalPage();
+        long totalPage = data.getTotalPage();
         Assert.assertEquals(totalPage, 3);
     }
 
@@ -36,7 +36,7 @@ public class BasePageResponseTest {
     public void getTotalPage_PageSizeZero() {
         BasePageResponse<Object> data = new BasePageResponse<Object>();
         data.setPageSize(0);
-        int totalPage = data.getTotalPage();
+        long totalPage = data.getTotalPage();
         Assert.assertEquals(totalPage, 0);
     }
 
