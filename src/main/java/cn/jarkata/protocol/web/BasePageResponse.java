@@ -14,11 +14,11 @@ public class BasePageResponse<T> extends BaseResponse {
     }
 
     public BasePageResponse(BasePageRequest<?> request) {
-        this.pageNo = request.getPageNo();
-        this.pageSize = request.getPageSize();
+        this(request.getPageNo(), request.getPageSize());
     }
 
     public BasePageResponse(int pageNo, int pageSize) {
+        super();
         this.pageNo = pageNo;
         this.pageSize = pageSize;
     }
@@ -63,5 +63,16 @@ public class BasePageResponse<T> extends BaseResponse {
 
     public void setData(List<T> data) {
         this.data = data;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuffer buffer = new StringBuffer("BasePageResponse{");
+        buffer.append(super.toString());
+        buffer.append(", pageNo=").append(pageNo);
+        buffer.append(", pageSize=").append(pageSize);
+        buffer.append(", totalCount=").append(totalCount);
+        buffer.append('}');
+        return buffer.toString();
     }
 }

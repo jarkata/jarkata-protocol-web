@@ -35,4 +35,14 @@ public final class BasePageRequest<T> extends BaseRequest<T> {
     public void setPageSize(int pageSize) {
         this.pageSize = pageSize;
     }
+
+    @Override
+    public String toString() {
+        final StringBuffer buffer = new StringBuffer("BasePageRequest{");
+        buffer.append(super.toString());
+        buffer.append(", pageNo=").append(pageNo);
+        buffer.append(", pageSize=").append(pageSize);
+        buffer.append('}');
+        return buffer.toString();
+    }
 }

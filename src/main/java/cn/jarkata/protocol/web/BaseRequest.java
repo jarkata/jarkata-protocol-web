@@ -22,4 +22,13 @@ public class BaseRequest<T> implements Serializable {
     public void setData(T data) {
         this.data = data;
     }
+
+    @Override
+    public String toString() {
+        final StringBuffer buffer = new StringBuffer("{");
+        buffer.append("msgType='").append(msgType).append('\'');
+        buffer.append(", data=").append(data);
+        buffer.append('}');
+        return buffer.toString();
+    }
 }
