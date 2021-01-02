@@ -9,6 +9,20 @@ public class BasePageResponse<T> extends BaseResponse {
     private int totalCount;
     private List<T> data;
 
+    public BasePageResponse() {
+        super();
+    }
+
+    public BasePageResponse(BasePageRequest<?> request) {
+        this.pageNo = request.getPageNo();
+        this.pageSize = request.getPageSize();
+    }
+
+    public BasePageResponse(int pageNo, int pageSize) {
+        this.pageNo = pageNo;
+        this.pageSize = pageSize;
+    }
+
     public int getPageNo() {
         return pageNo;
     }
