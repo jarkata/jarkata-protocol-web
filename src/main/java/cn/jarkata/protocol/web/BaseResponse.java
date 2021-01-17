@@ -8,13 +8,19 @@ public class BaseResponse implements Serializable {
     private Object data;
 
     public BaseResponse() {
-        this.code = "0";
-        this.message = "success";
     }
 
     public BaseResponse(String code, String message) {
         this.code = code;
         this.message = message;
+    }
+
+    public static BaseResponse success() {
+        return new BaseResponse("0", "success");
+    }
+
+    public static BaseResponse fail(String code, String message) {
+        return new BaseResponse(code, message);
     }
 
     public String getCode() {
