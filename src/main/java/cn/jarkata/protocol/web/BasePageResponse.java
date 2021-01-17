@@ -27,24 +27,27 @@ public class BasePageResponse<T> extends BaseResponse {
         return pageNo;
     }
 
-    public void setPageNo(int pageNo) {
-        this.pageNo = pageNo;
-    }
-
     public int getPageSize() {
         return pageSize;
-    }
-
-    public void setPageSize(int pageSize) {
-        this.pageSize = pageSize;
     }
 
     public long getTotalCount() {
         return totalCount;
     }
 
-    public void setTotalCount(long totalCount) {
+    public BasePageResponse<T> setPageNo(int pageNo) {
+        this.pageNo = pageNo;
+        return this;
+    }
+
+    public BasePageResponse<T> setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+        return this;
+    }
+
+    public BasePageResponse<T> setTotalCount(long totalCount) {
         this.totalCount = totalCount;
+        return this;
     }
 
     public long getTotalPage() {
@@ -61,8 +64,9 @@ public class BasePageResponse<T> extends BaseResponse {
         return data;
     }
 
-    public void setData(List<T> data) {
+    public BasePageResponse<T> setData(List<T> data) {
         this.data = data;
+        return this;
     }
 
     @Override

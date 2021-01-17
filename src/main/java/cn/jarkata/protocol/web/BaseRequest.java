@@ -11,16 +11,18 @@ public class BaseRequest<T> implements Serializable {
         return msgType;
     }
 
-    public void setMsgType(String msgType) {
-        this.msgType = msgType;
-    }
-
     public T getData() {
         return data;
     }
 
-    public void setData(T data) {
+    public BaseRequest<T> setMsgType(String msgType) {
+        this.msgType = msgType;
+        return this;
+    }
+
+    public BaseRequest<T> setData(T data) {
         this.data = data;
+        return this;
     }
 
     @Override

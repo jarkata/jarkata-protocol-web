@@ -24,16 +24,18 @@ public final class BasePageRequest<T> extends BaseRequest<T> {
         return pageNo;
     }
 
-    public void setPageNo(int pageNo) {
-        this.pageNo = pageNo;
-    }
-
     public int getPageSize() {
         return pageSize;
     }
 
-    public void setPageSize(int pageSize) {
+    public BasePageRequest<T> setPageNo(int pageNo) {
+        this.pageNo = pageNo;
+        return this;
+    }
+
+    public BasePageRequest<T> setPageSize(int pageSize) {
         this.pageSize = pageSize;
+        return this;
     }
 
     @Override
